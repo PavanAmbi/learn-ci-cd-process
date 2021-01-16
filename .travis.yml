@@ -14,4 +14,4 @@ addons:
   sonarcloud:
     organization: "pavanambi"
     token:
-      secure: "**************************" # encrypted value of your token
+      secure: 34ca01b08d26c0c41cc8eb032f4f67b2e34e0c15 # encrypted value of your token
