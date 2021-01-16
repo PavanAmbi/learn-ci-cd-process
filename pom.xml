@@ -59,7 +59,7 @@
 				<version>2.2.0</version>
 				<configuration>
 					<to>
-					<image>${pavanambi}/pavanambi/practise-ci-cd</image>
+					<image>pavanambi/practise-ci-cd</image>
 					<tags>
 						<tag>${project.version}</tag>
 						<tag>latest</tag>
