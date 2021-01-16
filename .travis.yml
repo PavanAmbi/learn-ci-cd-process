@@ -2,11 +2,16 @@ language: java
 jdk:
   - openjdk11
 script:
-  - ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent install
+  - ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
   - ./mvnw heroku:deploy jib:build -P deploy-heroku,deploy-docker
 before_install:
   - chmod +x mvnw
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker pull openjdk:11-jre-slim-sid 
 after_success:
-  - bash <(curl -s https://codecov.io/bash) 
+  - bash <(curl -s https://codecov.io/bash)
+addons:
+  sonarcloud:
+    organization: "pavanambi"
+    token:
+      secure: "**************************" # encrypted value of your token
